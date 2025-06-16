@@ -3,12 +3,19 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import tw from 'twrnc';
-import { AuthStackParamList } from '../../navigation/AuthNavigator';
+import type { AuthStackParamList } from '../../navigation/AuthNavigator';
 
 type NavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Login'>;
 
 export default function LoginScreen() {
   const navigation = useNavigation<NavigationProp>();
+
+  const handleLogin = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'App' }],
+    });
+  };
 
   return (
     <View style={tw`flex-1 p-6 justify-center`}>
@@ -23,7 +30,7 @@ export default function LoginScreen() {
         style={tw`border border-gray-300 p-4 rounded mb-4`}
         secureTextEntry
       />
-      <TouchableOpacity style={tw`bg-black p-4 rounded mb-4`}>
+      <TouchableOpacity onPress={handleLogin} style={tw`bg-black p-4 rounded mb-4`}>
         <Text style={tw`text-white text-center`}>Log In</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
