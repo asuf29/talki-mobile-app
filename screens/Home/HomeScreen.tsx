@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'; 
+import { View, Text } from 'react-native'; 
 import tw from 'twrnc';
 
 export default function HomeScreen() {
@@ -9,9 +9,6 @@ export default function HomeScreen() {
       <Text style={tw`text-gray-700 mb-8`}>
         Welcome to the Talki app! This is your home screen.
       </Text>
-      <TouchableOpacity style={tw`bg-black p-4 rounded-lg`}>
-        <Text style={tw`text-white text-center font-bold text-base`}>Start Learning</Text>
-      </TouchableOpacity>
     </View>
   );
 }

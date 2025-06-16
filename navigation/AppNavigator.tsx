@@ -3,12 +3,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/Onboarding/WelcomeScreen';
 import LanguageSelectScreen from '../screens/Onboarding/LanguageSelectScreen';
 import LearningGoalScreen from '../screens/Onboarding/LearningGoalScreen';
+import AllSetScreen from '../screens/Onboarding/AllSetScreen';
 import HomeScreen from '../screens/Home/HomeScreen';
 
 export type AppStackParamList = {
   Welcome: undefined;
   LanguageSelect: undefined;
   LearningGoal: undefined;
+  AllSet: undefined; 
   Home: undefined;
 };
 
@@ -20,6 +22,7 @@ export default function AppNavigator() {
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="LanguageSelect" component={LanguageSelectScreen} />
       <Stack.Screen name="LearningGoal" component={LearningGoalScreen} />
+      <Stack.Screen name="AllSet" component={AllSetScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );

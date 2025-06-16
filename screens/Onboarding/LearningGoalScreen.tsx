@@ -43,10 +43,10 @@ export default function LearningGoalScreen() {
 
       <TouchableOpacity
         style={tw`mt-4 bg-black p-4 rounded-xl ${!selected ? 'opacity-50' : ''}`}
-        onPress={() => selected && navigation.navigate('Home')}
+        onPress={() => selected && navigation.navigate('AllSet')}
         disabled={!selected}
       >
-        <Text style={tw`text-white text-center font-medium text-base`}>Finish</Text>
+        <Text style={tw`text-white text-center font-medium text-base`}>Next</Text>
       </TouchableOpacity>
     </View>
   );
