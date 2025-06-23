@@ -21,11 +21,11 @@ export default function AllSetScreen() {
       </View>
 
       <TouchableOpacity
-        style={tw`bg-black p-4 rounded-lg shadow-lg`}
+        style={tw`bg-black p-4 rounded-full shadow-lg`}
         activeOpacity={0.8}
         onPress={handleStartLearning}
       >
-        <Text style={tw`text-white text-center font-bold text-lg`}>Start Learning</Text>
+        <Text style={tw`text-white text-center font-bold text-base`}>Start Learning</Text>
       </TouchableOpacity>
     </View>
   );

@@ -42,7 +42,7 @@ export default function LearningGoalScreen() {
       />
 
       <TouchableOpacity
-        style={tw`mt-4 bg-black p-4 rounded-xl ${!selected ? 'opacity-50' : ''}`}
+        style={tw`mt-4 bg-black p-4 rounded-full ${!selected ? 'opacity-50' : ''}`}
         onPress={() => selected && navigation.navigate('AllSet')}
         disabled={!selected}
       >
