@@ -11,8 +11,8 @@ export default function WelcomeScreen() {
   const navigation = useNavigation<NavigationProp>();
 
   return (
-    <View style={tw`flex-1 p-6 justify-center items-center`}>
-      <Text style={tw`text-2xl font-semibold text-center mb-6`}>Welcome to Talki! 🎉</Text>
+    <View style={tw`flex-1 p-6 bg-white`}>
+      <Text style={tw`text-2xl font-semibold text-center mb-6 mt-8`}>Welcome to Talki! 🎉</Text>
 
       <TouchableOpacity style={tw`bg-black p-4 rounded-xl w-full`} onPress={() => navigation.navigate('LanguageSelect')}>
         <Text style={tw`text-white text-center text-base font-medium`}>Next</Text>

@@ -31,8 +31,8 @@ export default function LanguageSelectScreen() {
   );
 
   return (
-    <View style={tw`flex-1 p-6 bg-white mt-10`}>
-      <Text style={tw`text-2xl font-semibold mb-2`}>Which Language Do You Want to Master? 🌐</Text>
+    <View style={tw`flex-1 p-6 bg-white`}>
+      <Text style={tw`text-2xl font-semibold mb-2 mt-8`}>Which Language Do You Want to Master? 🌐</Text>
       <Text style={tw`text-sm text-gray-600 mb-4`}>
         Pick one language that you'd like to learn first.
       </Text>

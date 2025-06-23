@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import tw from 'twrnc';
@@ -18,23 +18,56 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={tw`flex-1 p-6 justify-center`}>
-      <Text style={tw`text-3xl font-bold mb-8 text-center`}>Welcome Back</Text>
-      <TextInput
-        placeholder="Email"
-        style={tw`border border-gray-300 p-4 rounded mb-4`}
-        keyboardType="email-address"
+    <View style={tw`flex-1 bg-white px-6 justify-center`}>
+      {/* Logo */}
+      <Image
+        source={require('../../assets/images/lets-talk.gif')}
+        resizeMode="contain"
+        style={tw`w-28 h-28 mb-4 self-center`}
       />
-      <TextInput
-        placeholder="Password"
-        style={tw`border border-gray-300 p-4 rounded mb-4`}
-        secureTextEntry
-      />
-      <TouchableOpacity onPress={handleLogin} style={tw`bg-black p-4 rounded mb-4`}>
-        <Text style={tw`text-white text-center`}>Log In</Text>
+
+      {/* Başlık */}
+      <Text style={tw`text-3xl font-bold text-center mb-2 text-black`}>
+        Welcome to, <Text style={tw`italic text-[#14b8a6]`}>Talki</Text>
+      </Text>
+      <Text style={tw`text-base text-center text-gray-500 mb-8`}>
+        Let's improve your language skills together!
+      </Text>
+
+      {/* Inputlar */}
+      <View style={tw`bg-gray-100 p-4 rounded-full mb-4`}>
+        <TextInput
+          placeholder="Email"
+          placeholderTextColor="#888"
+          keyboardType="email-address"
+          style={tw`text-base text-black`}
+        />
+      </View>
+
+      <View style={tw`bg-gray-100 p-4 rounded-full mb-6`}>
+        <TextInput
+          placeholder="Password"
+          placeholderTextColor="#888"
+          secureTextEntry
+          style={tw`text-base text-black`}
+        />
+      </View>
+
+      {/* Giriş Butonu */}
+      <TouchableOpacity
+        onPress={handleLogin}
+        style={tw`bg-black p-4 rounded-full mb-6 shadow-md`}
+      >
+        <Text style={tw`text-white text-center text-base font-semibold`}>
+          Log In
+        </Text>
       </TouchableOpacity>
+
+      {/* Kayıt Linki */}
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text style={tw`text-center text-gray-600`}>Don't have an account? Register</Text>
+        <Text style={tw`text-center text-gray-600`}>
+          Don't have an account? <Text style={tw`text-blue-600 font-semibold`}>Register</Text>
+        </Text>
       </TouchableOpacity>
     </View>
   );
