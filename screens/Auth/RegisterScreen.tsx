@@ -85,7 +85,7 @@ export default function RegisterScreen() {
 
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text style={tw`text-center text-gray-600`}>
-          Already have an account? <Text style={tw`text-blue-600 font-semibold`}>Log In</Text>
+          Already have an account? <Text style={tw`text-[#00c7ee] font-semibold`}>Log In</Text>
         </Text>
       </TouchableOpacity>
     </View>

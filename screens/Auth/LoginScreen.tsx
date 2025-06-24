@@ -28,7 +28,7 @@ export default function LoginScreen() {
 
       {/* Başlık */}
       <Text style={tw`text-3xl font-bold text-center mb-2 text-black`}>
-        Welcome to, <Text style={tw`italic text-[#14b8a6]`}>Talki</Text>
+        Welcome to, <Text style={tw`italic text-[#00c7ee]`}>Talki</Text>
       </Text>
       <Text style={tw`text-base text-center text-gray-500 mb-8`}>
         Let's improve your language skills together!
@@ -66,7 +66,7 @@ export default function LoginScreen() {
       {/* Kayıt Linki */}
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
         <Text style={tw`text-center text-gray-600`}>
-          Don't have an account? <Text style={tw`text-blue-600 font-semibold`}>Register</Text>
+          Don't have an account? <Text style={tw`text-[#00c7ee] font-semibold`}>Register</Text>
         </Text>
       </TouchableOpacity>
     </View>
