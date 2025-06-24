@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native'; 
+import { View, ScrollView } from 'react-native';
 import tw from 'twrnc';
+import GreetingHeader from '../../components/GreetingHeader';
+import DailyGoal from '../../components/DailyGoal';
+import UserSuggestions from '../../components/UserSuggestions';
 
 export default function HomeScreen() {
   return (
-    <View style={tw`flex-1 p-6 bg-white`}>
-      <Text style={tw`text-2xl font-bold mb-4 mt-8`}>Home Screen</Text>
-      <Text style={tw`text-gray-700 mb-8`}>
-        Welcome to the Talki app! This is your home screen.
-      </Text>
-    </View>
+    <ScrollView style={tw`flex-1 bg-white px-8 pt-16`}>
+      <GreetingHeader name="Asu" />
+      <DailyGoal goal="Send 10 English messages" />
+      <UserSuggestions />
+    </ScrollView>
   );
 }

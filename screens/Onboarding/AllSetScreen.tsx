@@ -12,7 +12,6 @@ export default function AllSetScreen() {
   };
   return (
     <View style={tw`flex-1 bg-white px-8 pt-16 pb-12 justify-between`}>
-      
       <View>
         <Text style={tw`text-2xl font-extrabold mb-2`}>All Set!</Text>
         <Text style={tw`text-sm text-gray-600 mb-4`}>
