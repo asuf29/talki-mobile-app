@@ -5,9 +5,24 @@ import UserCard from './UserCard';
 
 export default function UserSuggestions() {
   const users = [
-    { name: 'Doğu', native: '🇹🇷', learning: '🇬🇧' },
-    { name: 'Anna', native: '🇺🇸', learning: '🇫🇷' },
-    { name: 'Lisa', native: '🇩🇪', learning: '🇪🇸' },
+    {
+      name: 'Mert',
+      native: '🇹🇷',
+      learning: '🇬🇧',
+      avatar: require('../assets/images/boy.png'),
+    },
+    {
+      name: 'Anna',
+      native: '🇺🇸',
+      learning: '🇫🇷',
+      avatar: require('../assets/images/woman.png'),
+    },
+    {
+      name: 'Lisa',
+      native: '🇩🇪',
+      learning: '🇪🇸',
+      avatar: require('../assets/images/girl.png'),
+    },
   ];
 
   return (
@@ -17,6 +32,7 @@ export default function UserSuggestions() {
         {users.map((user, index) => (
           <UserCard
             key={index}
+            avatar={user.avatar}
             name={user.name}
             native={user.native}
             learning={user.learning}
