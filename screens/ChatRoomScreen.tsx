@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 import tw from 'twrnc';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import * as Speech from 'expo-speech';
 
 type Message = {
   id: string;
@@ -24,6 +26,10 @@ export default function ChatRoomScreen({ route }: any) {
       ]);
       setMessage('');
     }
+  };
+
+  const handleTranslate = (text: string) => {
+    console.log(`Translating: ${text}`);
   };
 
   return (
@@ -52,6 +58,14 @@ export default function ChatRoomScreen({ route }: any) {
             >
               {item.text}
             </Text>
+            <View style={tw`flex-row gap-2 mt-2`}>
+              <TouchableOpacity onPress={() => handleTranslate(item.text)}>
+                <Ionicons name="language-outline" size={16} color="#999" />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Speech.speak(item.text)}>
+                <Ionicons name="volume-high-outline" size={16} color="#999" />
+              </TouchableOpacity>
+            </View>
           </View>
         )}
         contentContainerStyle={tw`pb-4 pt-2`}
