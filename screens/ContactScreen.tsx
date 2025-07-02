@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, Image, TextInput, TouchableOpacity } from 'react-native';
 import tw from 'twrnc';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { AppStackParamList } from '../navigation/AppNavigator';
+
+type NavigationProp = NativeStackNavigationProp<AppStackParamList>;
 
 const dummyUsers = [
   { id: '1', name: 'Alice', targetLanguage: 'English', avatar: require('../assets/images/girl.png') },
@@ -14,12 +19,17 @@ const languages = ['All', 'English', 'Spanish', 'French'];
 export default function ContactScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('All');
+  const navigation = useNavigation<NavigationProp>();
 
   const filteredUsers = dummyUsers.filter(user => {
     const matchesSearch = user.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesLanguage = selectedLanguage === 'All' || user.targetLanguage === selectedLanguage;
     return matchesSearch && matchesLanguage;
   });
+
+  const handleMessage = (name: string) => {
+    navigation.navigate('ChatRoom', { title: name });
+  };
 
   return (
     <View style={tw`flex-1 bg-white px-8 pt-16`}>
@@ -61,7 +71,10 @@ export default function ContactScreen() {
               <Text style={tw`text-lg font-semibold`}>{item.name}</Text>
               <Text style={tw`text-sm text-gray-600`}>Learning: {item.targetLanguage}</Text>
             </View>
-            <TouchableOpacity style={tw`bg-[#00c7ee] px-3 py-1 rounded-full`}>
+            <TouchableOpacity
+              onPress={() => handleMessage(item.name)}
+              style={tw`bg-[#00c7ee] px-3 py-1 rounded-full`}
+            >
               <Text style={tw`text-white text-sm font-medium`}>Message</Text>
             </TouchableOpacity>
           </View>
