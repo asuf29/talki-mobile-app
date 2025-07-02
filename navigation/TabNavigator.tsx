@@ -20,7 +20,7 @@ export default function TabNavigator() {
 
           return <Ionicons name={iconName as any} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#14b8a6',
+        tabBarActiveTintColor: '#00c7ee',
         tabBarInactiveTintColor: 'gray',
         headerShown: false,
       })}
