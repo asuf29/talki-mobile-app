@@ -1,8 +1,35 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import tw from 'twrnc';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type NavigationProp = NativeStackNavigationProp<AuthStackParamList>;
 
 export default function ProfileScreen() {
+  const navigation = useNavigation<NavigationProp>();
+
+  const handleLogout = () => {
+    Alert.alert(
+      'Log Out',
+      'Are you sure you want to log out?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Log Out',
+          onPress: () => {
+            navigation.navigate('Login');
+          },
+          style: 'destructive',
+        },
+      ],
+      { cancelable: true }
+    );
+  };
+
   return (
     <ScrollView style={tw`flex-1 bg-white px-8 pt-16`}>
       <View style={tw`items-center mb-6`}>
@@ -22,8 +49,8 @@ export default function ProfileScreen() {
         <TouchableOpacity style={tw`py-4 border-b border-gray-200`}>
           <Text style={tw`text-base text-gray-800`}>Change Password</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={tw`py-4`}>
-          <Text style={tw`text-base text-red-500 font-semibold`}>Log Out</Text>
+        <TouchableOpacity onPress={handleLogout} style={tw`py-4`}>
+          <Text style={tw`text-base text-red-500 font-bold`}>Log Out</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
