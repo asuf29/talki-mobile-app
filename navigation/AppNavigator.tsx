@@ -7,6 +7,7 @@ import AllSetScreen from '../screens/Onboarding/AllSetScreen';
 import HomeScreen from '../screens/Home/HomeScreen';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import AIPartnerScreen from '../screens/AIPartnerScreen';
+import TabNavigator from './TabNavigator';
 
 export type AppStackParamList = {
   Welcome: undefined;
@@ -16,6 +17,7 @@ export type AppStackParamList = {
   Home: undefined;
   ChatRoom: undefined;
   AIPartner: undefined;
+  Tabs: undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -30,6 +32,7 @@ export default function AppNavigator() {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
       <Stack.Screen name="AIPartner" component={AIPartnerScreen} /> 
+      <Stack.Screen name="Tabs" component={TabNavigator} />
     </Stack.Navigator>
   );
 }

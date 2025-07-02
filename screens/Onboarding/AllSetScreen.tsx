@@ -9,7 +9,12 @@ export default function AllSetScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
   const handleStartLearning = () => {
     navigation.navigate('Home');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Tabs' }],
+    });
   };
+
   return (
     <View style={tw`flex-1 bg-white px-8 pt-16 pb-12 justify-between`}>
       <View>
