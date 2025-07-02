@@ -31,6 +31,12 @@ const groups: Group[] = [
     users: 20,
     hasNewMessages: true,
   },
+  {
+    title: '🤖 AI Partner',
+    description: 'Chat with AI language partners.',
+    users: 5,
+    hasNewMessages: false,
+  },
 ];
 
 export default function GroupChats() {
@@ -55,7 +61,6 @@ export default function GroupChats() {
           <Text style={tw`text-sm text-gray-600 mb-1`}>{group.description}</Text>
           <Text style={tw`text-xs text-gray-500`}>{group.users} users online</Text>
 
-          {/* Badge */}
           {group.hasNewMessages && (
             <View style={tw`absolute top-2 right-3 w-3 h-3 bg-red-500 rounded-full`} />
           )}

@@ -19,14 +19,12 @@ export default function LoginScreen() {
 
   return (
     <View style={tw`flex-1 bg-white px-6 justify-center`}>
-      {/* Logo */}
       <Image
         source={require('../../assets/images/lets-talk.gif')}
         resizeMode="contain"
         style={tw`w-28 h-28 mb-4 self-center`}
       />
 
-      {/* Başlık */}
       <Text style={tw`text-3xl font-bold text-center mb-2 text-black`}>
         Welcome to, <Text style={tw`italic text-[#00c7ee]`}>Talki</Text>
       </Text>
@@ -34,7 +32,6 @@ export default function LoginScreen() {
         Let's improve your language skills together!
       </Text>
 
-      {/* Inputlar */}
       <View style={tw`bg-gray-100 p-4 rounded-full mb-4`}>
         <TextInput
           placeholder="Email"
@@ -53,7 +50,6 @@ export default function LoginScreen() {
         />
       </View>
 
-      {/* Giriş Butonu */}
       <TouchableOpacity
         onPress={handleLogin}
         style={tw`bg-black p-4 rounded-full mb-6 shadow-md`}
@@ -63,7 +59,6 @@ export default function LoginScreen() {
         </Text>
       </TouchableOpacity>
 
-      {/* Kayıt Linki */}
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
         <Text style={tw`text-center text-gray-600`}>
           Don't have an account? <Text style={tw`text-[#00c7ee] font-semibold`}>Register</Text>

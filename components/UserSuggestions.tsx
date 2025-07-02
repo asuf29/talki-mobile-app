@@ -6,7 +6,7 @@ import UserCard from './UserCard';
 export default function UserSuggestions() {
   const users = [
     {
-      name: 'Mert',
+      name: 'Doğukan',
       native: '🇹🇷',
       learning: '🇬🇧',
       avatar: require('../assets/images/boy.png'),

@@ -6,6 +6,7 @@ import LearningGoalScreen from '../screens/Onboarding/LearningGoalScreen';
 import AllSetScreen from '../screens/Onboarding/AllSetScreen';
 import HomeScreen from '../screens/Home/HomeScreen';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import AIPartnerScreen from '../screens/AIPartnerScreen';
 
 export type AppStackParamList = {
   Welcome: undefined;
@@ -14,6 +15,7 @@ export type AppStackParamList = {
   AllSet: undefined; 
   Home: undefined;
   ChatRoom: undefined;
+  AIPartner: undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -27,6 +29,7 @@ export default function AppNavigator() {
       <Stack.Screen name="AllSet" component={AllSetScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
+      <Stack.Screen name="AIPartner" component={AIPartnerScreen} /> 
     </Stack.Navigator>
   );
 }
